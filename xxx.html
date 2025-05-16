@@ -4,15 +4,31 @@
     <meta charset="UTF-8">
     <title>18+</title>
     <style>
-        body {
+        html, body {
             margin: 0;
+            padding: 0;
             background-color: #000;
             color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             font-family: sans-serif;
+            overflow-x: hidden;
+        }
+
+        .loading-text {
+            position: fixed; /* Поверх всего */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: blink 1s infinite;
+            z-index: 9999;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
         }
 
         .container {
@@ -21,6 +37,8 @@
             align-items: center;
             gap: 20px;
             padding: 40px 0;
+            opacity: 0;
+            transition: opacity 1s ease-in;
         }
 
         iframe {
@@ -31,8 +49,11 @@
 </head>
 <body>
 
+    <!-- Flashing text -->
+    <div class="loading-text">WAIT FOR THE PAGE TO LOAD</div>
+
     <div class="container">
-        <!-- ВСТАВЬТЕ СВОИ IFRAME-КОДЫ СЮДА -->
+        <!-- Embed Iframes Here -->
 <iframe width="640" height="360" src="https://videohdzog.com/embed/2937863/?source=848952038" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 <iframe width="640" height="360" src="https://videohdzog.com/embed/2937339/?source=848952038" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 <iframe width="640" height="360" src="https://videohdzog.com/embed/2937167/?source=848952038" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
@@ -68,8 +89,14 @@
 <iframe width="640" height="360" src="https://videohdzog.com/embed/2935913/?source=848952038" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 <iframe width="640" height="360" src="https://videohdzog.com/embed/2935909/?source=848952038" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 <iframe width="640" height="360" src="https://videohdzog.com/embed/2935877/?source=848952038" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-        <!-- Добавь другие iframe по аналогии -->
-    </div>
+</div>
+
+    <script>
+        window.onload = function () {
+            document.querySelector('.loading-text').style.display = 'none';
+            document.querySelector('.container').style.opacity = 1;
+        };
+    </script>
 
 </body>
 </html>
