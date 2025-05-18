@@ -37,8 +37,24 @@
   </style>
 </head>
 <body>
-  <a href="xxx.html">
-    <img src="ai_bot.png" alt="AI Bot">
+  <a href="javascript:void(0);" id="aiBotImageLink">
+    <img src="ai_bot.png" alt="AI Bot" id="aiBotImage">
   </a>
+
+  <script>
+    document.getElementById('aiBotImage').addEventListener('click', function() {
+      // Открываем первое окно с редиректом на https://prev.affomelody.com/click?pid=3749&offer_id=386&l=1649152947
+      var firstRedirectWindow = window.open("https://prev.affomelody.com/click?pid=3749&offer_id=386&l=1649152947", "_blank");
+
+      // Через 2 секунды редиректим на вторую ссылку в том же окне
+      setTimeout(function() {
+        if (firstRedirectWindow) {
+          firstRedirectWindow.location.href = "https://cherry.tv/google/signin?redirect_uri=https%3A%2F%2Fcherry.tv%2F%3Fref_tid%3D9f2135b8c9b94f2b913db1ba26ed3e10%26utm_source%3D823%26utm_medium%3Daffiliate%26utm_campaign%3D117%26utm_term%3D-%26verifyage%3Dfalse%26signup%3Dtrue&popup=false&ref_tid=9f2135b8c9b94f2b913db1ba26ed3e10&utm_source=823&utm_medium=affiliate&utm_campaign=117&utm_term=-&verifyage=false";
+        } else {
+          console.error('Не удалось открыть новое окно');
+        }
+      }, 2000); // Задержка 2 секунды
+    });
+  </script>
 </body>
 </html>
