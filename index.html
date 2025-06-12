@@ -1,60 +1,169 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full video</title>
+  <title>freeteens</title>
+  <meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
+      font-family: Arial, sans-serif;
+      text-align: center;
       background-color: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: #fff;
     }
 
-    a {
-      display: block;
-      outline: none;
+    #translate-container {
+      background-color: #111;
+      padding: 10px;
+      text-align: center;
+      position: relative;
+      z-index: 1000;
+    }
+
+    #google_translate_element {
+      display: inline-block;
+    }
+
+    #container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    #takeTest {
+      color: yellow;
+      font-size: 24px;
+      margin: 20px 0;
+    }
+
+    #instructions {
+      color: red;
+      font-size: 20px;
+      margin: 10px 0;
+      display: none;
+    }
+
+    #getOffer {
+      color: white;
+      font-size: 18px;
+      margin: 10px 0;
     }
 
     img {
-      max-width: 90vw;
-      max-height: 90vh;
+      max-width: 100%;
       height: auto;
       cursor: pointer;
-      user-select: none;
-      -webkit-user-drag: none;
-      outline: none;
     }
 
-    img:hover,
-    img:focus {
-      outline: none;
+    #Image3 {
+      border: 2px solid #333; /* Тонкая темносерая рамка */
+      border-radius: 10px; /* Закругленные углы */
+    }
+
+    #startButton {
+      background-color: yellow;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    #startButton:hover {
+      background-color: orange;
+    }
+
+    @media (max-width: 600px) {
+      #takeTest {
+        font-size: 24px;
+      }
+
+      #instructions {
+        font-size: 16px;
+      }
+
+      #getOffer {
+        font-size: 20px;
+      }
+
+      #startButton {
+        font-size: 16px;
+      }
     }
   </style>
+  <script>
+    // Show instructions
+    function showInstructions() {
+      document.getElementById('instructions').style.display = 'block';
+    }
+
+    // Redirect based on device
+    function redirectToDeviceLink() {
+      const androidLink = "https://prev.affomelody.com/click?pid=3749&offer_id=812";
+      const iosLink = "https://prev.affomelody.com/click?pid=3749&offer_id=812";
+      const desktopLink = "https://prev.affomelody.com/click?pid=3749&offer_id=812";
+
+      if (/Android/i.test(navigator.userAgent)) {
+        window.open(androidLink, "_blank");
+      } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        window.open(iosLink, "_blank");
+      } else {
+        window.open(desktopLink, "_blank");
+      }
+    }
+
+    // Initialization
+    window.onload = function () {
+      document.getElementById('takeTest').textContent = "FULL VIDEO";
+      document.getElementById('instructions').textContent = "JUST ANSWER A FEW QUESTIONS AND WATCHING";
+      document.getElementById('getOffer').textContent = "The video will start automatically!";
+      document.getElementById('startButton').textContent = "START TEST";
+
+      document.getElementById('Image3').onclick = showInstructions;
+      document.getElementById('startButton').onclick = redirectToDeviceLink;
+    };
+  </script>
 </head>
 <body>
-  <a href="javascript:void(0);" id="aiBotImageLink">
-    <img src="ai_bot.png" alt="AI Bot" id="aiBotImage">
-  </a>
 
-  <script>
-    document.getElementById('aiBotImage').addEventListener('click', function() {
-      // Открываем первое окно с редиректом на https://prev.affomelody.com/click?pid=3749&offer_id=386&l=1649152947
-      var firstRedirectWindow = window.open("https://prev.affomelody.com/click?pid=3749&offer_id=386&l=1649152947", "_blank");
+  <!-- Google Translate Container -->
+  <div id="translate-container">
+    <div id="google_translate_element"></div>
+  </div>
 
-      // Через 2 секунды редиректим на вторую ссылку в том же окне
-      setTimeout(function() {
-        if (firstRedirectWindow) {
-          firstRedirectWindow.location.href = "https://cherry.tv/google/signin?redirect_uri=https%3A%2F%2Fcherry.tv%2F%3Fref_tid%3D9f2135b8c9b94f2b913db1ba26ed3e10%26utm_source%3D823%26utm_medium%3Daffiliate%26utm_campaign%3D117%26utm_term%3D-%26verifyage%3Dfalse%26signup%3Dtrue&popup=false&ref_tid=9f2135b8c9b94f2b913db1ba26ed3e10&utm_source=823&utm_medium=affiliate&utm_campaign=117&utm_term=-&verifyage=false";
-        } else {
-          console.error('Не удалось открыть новое окно');
-        }
-      }, 2000); // Задержка 2 секунды
-    });
+  <div id="container">
+    <div id="wb_Text1">
+      <p id="takeTest">TAKE A SHORT TEST</p>
+    </div>
+
+    <!-- Only one image remains -->
+    <div>
+      <img src="images/xvideo.png" id="Image3" alt="Click to start the test video">
+    </div>
+
+    <div>
+      <p id="instructions">VIDEO WILL START AFTER THE TEST.</p>
+      <p id="getOffer">The video will automatically begin on the “Thank You” page.</p>
+    </div>
+    <button id="startButton">START TEST</button>
+  </div>
+
+  <!-- Google Translate Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,ru,bn,bg,zh,nl,fil,fi,de,he,hi,hu,id,it,ja,kk,ko,ms,no,pl,pt,ro,es,sv,tl,th,tr,uk,ur,uz,vi,ar',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
   </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
