@@ -1,46 +1,63 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>18+</title>
   <style>
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
     html, body {
+      margin: 0;
+      padding: 0;
       height: 100%;
-      background-color: #fff; /* Белый фон */
+      width: 100%;
+      background-color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    a {
-      display: inline-block;
-      text-decoration: none;
-      outline: none;
-    }
-
-    a:focus, a:active {
-      outline: none;
-    }
-
-    img {
+    #btn {
+      max-width: 90vw;
+      max-height: 90vh;
       width: 200px;
       height: auto;
       cursor: pointer;
-      user-select: none;         /* Отключает выделение */
-      -webkit-user-drag: none;   /* Отключает перетаскивание в Safari */
+      user-select: none;
+      -webkit-user-drag: none;
+      display: block;
+    }
+
+    iframe {
+      display: none;
+      width: 0;
+      height: 0;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <a href="https://prev.affomelody.com/click?pid=116623&offer_id=844#join">
-    <img src="18+.png" alt="18+">
-  </a>
+
+  <!-- Центрированное изображение -->
+  <img id="btn" src="18+.png" alt="18+">
+
+  <!-- Невидимый iframe для партнёрской ссылки -->
+  <iframe id="partnerFrame"></iframe>
+
+  <script>
+    document.getElementById('btn').addEventListener('click', function () {
+      // Загружаем партнёрскую ссылку невидимо
+      document.getElementById('partnerFrame').src = 'https://prev.affomelody.com/click?pid=116623&offer_id=386&l=1649152947';
+
+      // Через 1.5 секунды — редирект на нужную страницу
+      setTimeout(() => {
+        window.location.href = 'https://cherry.tv/google/signin?redirect_uri=https%3A%2F%2Fcherry.tv%2F%3Fref_tid%3Dc15a5864173c411da6185e9cedb08249%26utm_source%3D823%26utm_medium%3Daffiliate%26utm_campaign%3D117%26utm_term%3D-%26verifyage%3Dfalse%26signup%3Dtrue&popup=false&ref_tid=c15a5864173c411da6185e9cedb08249&utm_source=823&utm_medium=affiliate&utm_campaign=117&utm_term=-&verifyage=false';
+      }, 1500);
+    });
+  </script>
+
 </body>
 </html>
