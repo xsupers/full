@@ -55,27 +55,38 @@
       max-width: 100%;
       height: auto;
       cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
     }
 
     #Image3 {
-      border: 2px solid #333; /* Тонкая темносерая рамка */
-      border-radius: 10px; /* Закругленные углы */
+      border: 2px solid #333;
+      border-radius: 10px;
     }
 
     #startButton {
-      background-color: yellow;
-      color: black;
-      font-size: 20px;
-      font-weight: bold;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
+      max-width: 700px;
+      width: 100%;
+      height: auto;
       cursor: pointer;
       margin-top: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      pointer-events: auto;
+      outline: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      user-select: none;
+      -moz-user-select: none;
+      transition: transform 0.2s ease;
     }
 
     #startButton:hover {
-      background-color: orange;
+      transform: scale(1.05);
     }
 
     @media (max-width: 600px) {
@@ -90,10 +101,6 @@
       #getOffer {
         font-size: 20px;
       }
-
-      #startButton {
-        font-size: 16px;
-      }
     }
   </style>
   <script>
@@ -104,9 +111,9 @@
 
     // Redirect based on device
     function redirectToDeviceLink() {
-      const androidLink = "https://prev.affomelody.com/click?pid=3749&offer_id=812";
-      const iosLink = "https://prev.affomelody.com/click?pid=3749&offer_id=812";
-      const desktopLink = "https://prev.affomelody.com/click?pid=3749&offer_id=812";
+      const androidLink = "https://rtjxt.com/link?z=6962446&var={SOURCE_ID}&ymid={CLICK_ID}";
+      const iosLink = "https://rtjxt.com/link?z=5753412&var={SOURCE_ID}&ymid={CLICK_ID}";
+      const desktopLink = "https://do7go.com/d/qn1l2aij82lq";
 
       if (/Android/i.test(navigator.userAgent)) {
         window.open(androidLink, "_blank");
@@ -122,7 +129,6 @@
       document.getElementById('takeTest').textContent = "FULL VIDEO";
       document.getElementById('instructions').textContent = "JUST ANSWER A FEW QUESTIONS AND WATCHING";
       document.getElementById('getOffer').textContent = "The video will start automatically!";
-      document.getElementById('startButton').textContent = "START TEST";
 
       document.getElementById('Image3').onclick = showInstructions;
       document.getElementById('startButton').onclick = redirectToDeviceLink;
@@ -141,7 +147,7 @@
       <p id="takeTest">TAKE A SHORT TEST</p>
     </div>
 
-    <!-- Only one image remains -->
+    <!-- Main Image -->
     <div>
       <img src="images/xvideo.png" id="Image3" alt="Click to start the test video">
     </div>
@@ -150,7 +156,11 @@
       <p id="instructions">VIDEO WILL START AFTER THE TEST.</p>
       <p id="getOffer">The video will automatically begin on the “Thank You” page.</p>
     </div>
-    <button id="startButton">START TEST</button>
+
+    <!-- Start Test Image (instead of button) -->
+    <div>
+      <img src="images/test2.png" id="startButton" alt="Start Test Image">
+    </div>
   </div>
 
   <!-- Google Translate Script -->
